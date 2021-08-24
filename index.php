@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>cryptnet.ch</title>
+		<title></title>
 		<style type="text/css">
 			table {
 				margin: 8px;
@@ -16,8 +16,8 @@
 
 <?php
 
-	$client_id = 'dj0yJmk9RlRaZzFSSGhRdlpCJmQ9WVdrOVkzVmxWRlkyVGpRbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTk1';
-	$client_secret = 'e44a7e46a3923b2dae87c8b7e54a3fcfcf387d56';
+	$client_id = '';
+	$client_secret = '';
 
 	$method = 'GET';
 	$url = 'https://fantasysports.yahooapis.com/fantasy/v2/games;game_keys=nfl/players;count=25';
