@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title></title>
+		<title>cryptnet.ch</title>
 		<style type="text/css">
 			table {
 				margin: 8px;
@@ -16,12 +16,11 @@
 
 <?php
 
-	$client_id = '';
-	$client_secret = '';
+	$client_id = 'dj0yJmk9RlRaZzFSSGhRdlpCJmQ9WVdrOVkzVmxWRlkyVGpRbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTk1';
+	$client_secret = 'e44a7e46a3923b2dae87c8b7e54a3fcfcf387d56';
 
 	$method = 'GET';
-	$game_code = 'nfl';
-	$url = 'https://fantasysports.yahooapis.com/fantasy/v2/games;game_keys=' . $game_code  . '/players;count=25';
+	$url = 'https://fantasysports.yahooapis.com/fantasy/v2/games;game_keys=nfl/players;count=25';
 
 	// OAuth
 	$oauth_consumer_key = $client_id;
@@ -39,7 +38,7 @@
 
 	$base_string = urlencode($method) . '&' . urlencode($url) . '&' . urlencode($params);
 
-	$secret = urlencode($client_secret) . '&' . urlencode($access_token_secret);
+	$secret = urlencode($client_secret) . '&' . urlencode();
 	$signature = base64_encode(hash_hmac('sha1', $base_string, $secret, true));
 
 	$final_url = $url . '?' . $params . '&oauth_signature=' . urlencode($signature);
@@ -72,11 +71,10 @@
 	}
 
 	$num_players = count($fantasy_players);
+	$player_rank_number = 0;
 
 	print "\n";
-	print "<h1>Fantasy Player Liste</h1>";
-	print "<h3>Anzahl Player: ${num_players}</h3>";
-	print "<h3>Für: ${game_code}</h3>";
+	print "<h1>NFL Fantasy Player Liste</h1>";
 	print "<br>";
 	
     foreach ($fantasy_players as $player_data) {
